@@ -1,1 +1,1 @@
-# RecSys-_EquityAlgorithm
+# RecSys_EquityAlgorithm
