@@ -8,7 +8,7 @@ A base de dados utilizada para os testes foi a [MovieLens-100k](https://grouplen
 A implementação segue um paradigma "ingênuo" no sentido de não utilizar estratégias mais sofisticadas para a clusterização dos usuários e de não adotar otimizações sutis ao algoritmo descrito no artigo. **Portanto, os resultados podem variar se outra implementação for desenvolvida**.
 
 ## Cenários considerados
-O algoritmo foi testado para cada algoritmo e divisão dos usuários descritos abaixo.
+O algoritmo de equidade foi testado para cada algoritmo de recomendação e divisão dos usuários descritos abaixo.
 
 Algoritmos:
 	* KNN
@@ -16,6 +16,8 @@ Algoritmos:
 	* NMF
 
 Grupos de usuários:
-	+ Gêneros: gênero feminino e masculino;
-	+ Idade: crianças (menor ou )
+	+ Gêneros: gêneros feminino e masculino;
+	+ Idade: crianças (idade menor do que 12 anos); adolescentes (idade maior ou igual a 12 e menor do que 18 anos); adulto (idade maior ou igual a 18 e menor do que 60 anos); idoso (idade maior do que 60 anos)
+	+ Estado: estado de origem dos Estados Unidos. Estados com menos de 50 usuários foram agrupados em um grupo, chamado de "Rest". Os estados que formaram grupos próprios são: CA, IL, MN, NY, TX.
+	+ Popularidade: os usuários foram ordenados em ordem decrescente de popularidade média de itens interagidos, sendo que a popularidade de um item é a sua quantidade de interações. O primeiro terço dos usuários são os do tipo "blockbuster"; o segundo do tipo "diversificado"; e o terceiro do tipo "nichado".
   
