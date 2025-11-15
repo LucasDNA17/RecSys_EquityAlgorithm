@@ -11,11 +11,13 @@ A implementação segue um paradigma "ingênuo" no sentido de não utilizar estr
 O algoritmo de equidade foi testado para cada algoritmo de recomendação e divisão dos usuários descritos abaixo.
 
 Algoritmos:
+
 	* KNN
 	* SVD
 	* NMF
 
 Grupos de usuários:
+
 	+ Gêneros: gêneros feminino e masculino;
 	+ Idade: crianças (idade menor do que 12 anos); adolescentes (idade maior ou igual a 12 e menor do que 18 anos); adulto (idade maior ou igual a 18 e menor do que 60 anos); idoso (idade maior do que 60 anos)
 	+ Estado: estado de origem dos Estados Unidos. Estados com menos de 50 usuários foram agrupados em um grupo, chamado de "Rest". Os estados que formaram grupos próprios são: CA, IL, MN, NY, TX.
