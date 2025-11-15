@@ -21,11 +21,13 @@ Grupos de usuários:
 	* Gêneros:
 		* masculino
 		* feminino
+
 	* Idade: 
 		* crianças (idade menor do que 12 anos)
 		* adolescentes (idade maior ou igual a 12 e menor do que 18 anos)
 		* adulto (idade maior ou igual a 18 e menor do que 60 anos)
-		* idoso (idade maior do que 60 anos)   
+		* idoso (idade maior do que 60 anos)  
+
 	* Estado(estado de origem dos Estados Unidos):
 		* CA
 		* IL
@@ -33,6 +35,7 @@ Grupos de usuários:
 		* NY
 		* TX
 		* Rest (estados com menos de 50 usuários)
+
 	* Popularidade:
 		* Blockbuster (vêem filmes mais populares)
 		* Diversificado (vêem filmes diversificados)
