@@ -18,8 +18,24 @@ Algoritmos:
 
 Grupos de usuários:
 
-	+ Gêneros: gêneros feminino e masculino;
-	+ Idade: crianças (idade menor do que 12 anos); adolescentes (idade maior ou igual a 12 e menor do que 18 anos); adulto (idade maior ou igual a 18 e menor do que 60 anos); idoso (idade maior do que 60 anos)
-	+ Estado: estado de origem dos Estados Unidos. Estados com menos de 50 usuários foram agrupados em um grupo, chamado de "Rest". Os estados que formaram grupos próprios são: CA, IL, MN, NY, TX.
-	+ Popularidade: os usuários foram ordenados em ordem decrescente de popularidade média de itens interagidos, sendo que a popularidade de um item é a sua quantidade de interações. O primeiro terço dos usuários são os do tipo "blockbuster"; o segundo do tipo "diversificado"; e o terceiro do tipo "nichado".
+	* Gêneros:
+		* masculino
+		* feminino
+	* Idade: 
+		* crianças (idade menor do que 12 anos)
+		* adolescentes (idade maior ou igual a 12 e menor do que 18 anos)
+		* adulto (idade maior ou igual a 18 e menor do que 60 anos)
+		* idoso (idade maior do que 60 anos)   
+	* Estado(estado de origem dos Estados Unidos):
+		* CA
+		* IL
+		* MN
+		* NY
+		* TX
+		* Rest (estados com menos de 50 usuários)
+	* Popularidade:
+		* Blockbuster (vêem filmes mais populares)
+		* Diversificado (vêem filmes diversificados)
+		* Nichado (vêem filmes impopulares)
+
   
