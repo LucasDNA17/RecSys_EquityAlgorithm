@@ -1,0 +1,95 @@
+\documentclass{article}
+\title{Results for the KNN algorithm}
+\date{}
+
+\usepackage{array}
+\usepackage{caption}
+
+\begin{document}
+\maketitle
+
+%%%%%% GÊNERO %%%%%%%
+\begin{table}[h!]
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\begin{flushleft} 
+\begin{tabular}{c|c|c|c|c} 
+\hline
+\textbf{h} & \textbf{Male} & \textbf{Female} & \textbf{\begin{tabular}[c]{@{}c@{}}Group \\ Unfairness\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Individual \\ Unfairness\end{tabular}} \\
+\hline
+Initial & 64.2712 & 64.0210 & 0.0157 & 0.0722 \\
+1 & 63.0181 & 62.2943 & 0.1310 & 0.0658 \\
+2 & 63.0214 & 62.3097 & 0.1266 & 0.0659 \\
+3 & 63.0200 & 62.3669 & 0.1066 & 0.0658 \\
+4 & 63.0210 & 62.3367 & 0.1171 & 0.0660 \\
+5 & 63.0239 & 62.2815 & 0.1378 & 0.0658 \\
+\hline
+\end{tabular}
+\caption{Results for the KNN algorithm with gender-based groups.}
+\end{flushleft}
+\end{table}
+
+
+%%%%%% IDADE %%%%%%%
+\begin{table}[h!]
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\begin{flushleft} 
+\begin{tabular}{c|c|c|c|c|c|c} 
+\hline
+\textbf{h} & \textbf{Children} & \textbf{Teenager} & \textbf{Adult} & \textbf{Elder} & \textbf{\begin{tabular}[c]{@{}c@{}}Group \\ Unfairness\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Individual \\ Unfairness\end{tabular}} \\
+\hline
+Initial & 23.4828 & 48.7850 & 65.6288 & 44.1351 & 225.6457 & 0.0722 \\
+1 & 23.3507 & 47.6696 & 64.2210 & 43.3067 & 211.9012 & 0.0661 \\
+2 & 23.3705 & 47.7880 & 64.2105 & 43.2619 & 211.8010 & 0.0660 \\
+3 & 23.3742 & 47.7414 & 64.2053 & 43.2347 & 211.6573 & 0.0658 \\
+4 & 23.3672 & 47.7481 & 64.2147 & 43.3296 & 211.7694 & 0.0658 \\
+\hline
+\end{tabular}
+\caption{Results for the KNN algorithm with age-based groups.}
+\end{flushleft}
+\end{table}
+
+%%%%%% ESTADOS %%%%%%%
+\begin{table}[h!]
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\begin{flushleft} 
+\begin{tabular}{c|c|c|c|c|c|c|c|c} 
+\hline
+\textbf{h} & \textbf{CA} & \textbf{IL} & \textbf{MN} & \textbf{NY} & \textbf{TX} & \textbf{Rest} & \textbf{\begin{tabular}[c]{@{}c@{}}Group \\ Unfairness\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Individual \\ Unfairness\end{tabular}} \\
+\hline
+Initial & 67.4483 & 59.8881 & 61.5345 & 87.1139 & 59.5295 & 62.3443 & 93.3078 & 0.0722 \\
+1 & 66.3417 & 58.2746 & 60.2747 & 83.8354 & 58.4216 & 61.0869 & 80.3665 & 0.0661 \\
+2 & 66.2664 & 58.3588 & 60.2432 & 83.8026 & 58.4983 & 61.0657 & 79.8513 & 0.0659 \\
+3 & 66.3330 & 58.3252 & 60.2991 & 83.8637 & 58.4549 & 61.0935 & 80.3206 & 0.0661 \\
+4 & 66.2802 & 58.2624 & 60.2074 & 83.7685 & 58.4659 & 61.0701 & 79.9615 & 0.0655 \\
+\hline
+\end{tabular}
+\caption{Results for the KNN algorithm with states-based groups.}
+\end{flushleft}
+\end{table}
+
+
+%%%%%% POPULARIDADE %%%%%%%
+\begin{table}[h!]
+\captionsetup{justification=raggedright,singlelinecheck=false}
+\begin{flushleft} 
+\begin{tabular}{c|c|c|c|c|c} 
+\hline
+\textbf{h} & \textbf{Blockbuster} & \textbf{Diversed} & \textbf{Niched} & \textbf{\begin{tabular}[c]{@{}c@{}}Group \\ Unfairness\end{tabular}} & \textbf{\begin{tabular}[c]{@{}c@{}}Individual \\ Unfairness\end{tabular}} \\
+\hline
+Initial & 20.6032 & 49.1364 & 122.6704 & 1848.7868 & 0.0722 \\
+1 & 20.2589 & 48.3598 & 119.6713 & 1750.8685 & 0.0660 \\
+2 & 20.2659 & 48.3409 & 119.6441 & 1749.8194 & 0.0660 \\
+3 & 20.2689 & 48.3376 & 119.6990 & 1751.8497 & 0.0660 \\
+4 & 20.2658 & 48.3502 & 119.6854 & 1751.2974 & 0.0659 \\
+\hline
+\end{tabular}
+\caption{Results for the KNN algorithm with popularity-based groups.}
+\end{flushleft}
+\end{table}
+
+
+
+\end{document}
+
+
+
