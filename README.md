@@ -7,6 +7,7 @@ A base de dados utilizada para os testes foi a [MovieLens-100k](https://grouplen
 
 A implementação segue um paradigma "ingênuo" no sentido de não utilizar estratégias mais sofisticadas para a clusterização dos usuários e de não adotar otimizações sutis ao algoritmo descrito no artigo. **Portanto, os resultados podem variar se outra implementação for desenvolvida**.
 
+
 ## Cenários considerados
 O algoritmo de equidade foi testado para cada algoritmo de recomendação e divisão dos usuários descritos abaixo.
 
@@ -41,4 +42,9 @@ Grupos de usuários:
 		* Diversificado (vêem filmes diversificados)
 		* Nichado (vêem filmes impopulares)
 
+
+## Métricas utilizadas
+Para avaliar a eficiência go algoritmo de equidade, foram utilizadas três métricas sociais:
+
+	*Individual Unfairness ($R_{ind}$): variação das perdas individuais dos usuários ($l_{i}$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário   
   
