@@ -48,4 +48,4 @@ Para avaliar a eficiência go algoritmo de equidade, foram utilizadas três mét
 
 * **Individual Unfairness ($R_{ind}$)**: variação das perdas individuais dos usuários ($l_{i}$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário:
 
-$$R_{ind} = 1 \over n²\sum_{k=1}^n\sum_{i>k} (l_k -l_i)^2$$   
+$$R_{ind} = (1 \over n²)\sum_{k=1}^n\sum_{i>k} (l_k -l_i)^2$$   
