@@ -13,9 +13,9 @@ O algoritmo de equidade foi testado para cada algoritmo de recomendação e divi
 
 Algoritmos:
 
-	* KNN
-	* SVD
-	* NMF
+	- KNN
+	- SVD
+	- NMF
 
 Grupos de usuários:
 
@@ -47,4 +47,3 @@ Grupos de usuários:
 Para avaliar a eficiência go algoritmo de equidade, foram utilizadas três métricas sociais:
 
 	*Individual Unfairness ($R_ind$): variação das perdas individuais dos usuários ($l_i$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário   
-  
