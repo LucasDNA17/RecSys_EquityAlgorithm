@@ -46,5 +46,5 @@ Grupos de usuários:
 ## Métricas utilizadas
 Para avaliar a eficiência go algoritmo de equidade, foram utilizadas três métricas sociais:
 
-	*Individual Unfairness ($R_{ind}$): variação das perdas individuais dos usuários ($l_{i}$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário   
+	*Individual Unfairness ($R_ind$): variação das perdas individuais dos usuários ($l_i$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário   
   
