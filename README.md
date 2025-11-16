@@ -19,17 +19,17 @@ Algoritmos:
 
 Grupos de usuários:
 
-* Gêneros:
+* **Gêneros:**
 	* masculino
 	* feminino
 
-* Idade: 
+* **Idade:** 
 	* crianças (idade menor do que 12 anos)
 	* adolescentes (idade maior ou igual a 12 e menor do que 18 anos)
 	* adulto (idade maior ou igual a 18 e menor do que 60 anos)
 	* idoso (idade maior do que 60 anos)  
 
-* Estado(estado de origem dos Estados Unidos):
+* **Estado (estado de origem dos Estados Unidos):**
 	* CA
 	* IL
 	* MN
@@ -37,7 +37,7 @@ Grupos de usuários:
 	* TX
 	* Rest (estados com menos de 50 usuários)
 
-* Popularidade:
+* **Popularidade:**
 	* Blockbuster (vêem filmes mais populares)
 	* Diversificado (vêem filmes diversificados)
 	* Nichado (vêem filmes impopulares)
@@ -46,4 +46,6 @@ Grupos de usuários:
 ## Métricas utilizadas
 Para avaliar a eficiência go algoritmo de equidade, foram utilizadas três métricas sociais:
 
-*Individual Unfairness ($R_ind$): variação das perdas individuais dos usuários ($l_i$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário   
+* **Individual Unfairness ($R_{ind}$)**: variação das perdas individuais dos usuários ($l_{i}$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário:
+
+$$R_{ind} = 1/n²\sum_{k=1}^n\sum_{i>k} (l_k -l_i)^2$$   
