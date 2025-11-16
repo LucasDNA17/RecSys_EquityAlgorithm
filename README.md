@@ -52,8 +52,19 @@ $$R_{ind} = \frac{1}{n^2}\sum_{k=1}^n\sum_{i>k} (l_k - l_i)^2$$
 
 * **Group Losses ($L_i$):** a perda de cada grupo é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas dos usuários do grupo.
 
-* **Group Unfairness (R_{grp}):** variação das perdas dos _g_ grupos
+* **Group Unfairness ($R_{grp}$):** variação das perdas dos _g_ grupos
 
 $$R_{grp} = \frac{1}{g^2}\sum_{k=1}^n\sum_{i>k} (L_k - L_i)^2$$
+
+
+## Resultados
+O algoritmo de equidade performou de modo diferente para cada algoritmo: ele demonstrou bastante eficiência para o SVD; eficiência baixa para o KNN; e, no caso do NMF, ele resultou em medidas de injustiça piores dos que as iniciais.
+Como exemplo, veja as medidas para o cenário de divisão por gênero:
+
+![Ex_SVD](assets/Ex_SVD.png)
+
+![Ex_KNN](assets/Ex_KNN.png)
+
+![Ex_NMF](assets/Ex_NMF.png)
 
 
