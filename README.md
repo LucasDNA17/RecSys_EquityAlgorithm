@@ -13,37 +13,37 @@ O algoritmo de equidade foi testado para cada algoritmo de recomendação e divi
 
 Algoritmos:
 
-	- KNN
-	- SVD
-	- NMF
+* KNN
+* SVD
+* NMF
 
 Grupos de usuários:
 
-	* Gêneros:
-		* masculino
-		* feminino
+* Gêneros:
+	* masculino
+	* feminino
 
-	* Idade: 
-		* crianças (idade menor do que 12 anos)
-		* adolescentes (idade maior ou igual a 12 e menor do que 18 anos)
-		* adulto (idade maior ou igual a 18 e menor do que 60 anos)
-		* idoso (idade maior do que 60 anos)  
+* Idade: 
+	* crianças (idade menor do que 12 anos)
+	* adolescentes (idade maior ou igual a 12 e menor do que 18 anos)
+	* adulto (idade maior ou igual a 18 e menor do que 60 anos)
+	* idoso (idade maior do que 60 anos)  
 
-	* Estado(estado de origem dos Estados Unidos):
-		* CA
-		* IL
-		* MN
-		* NY
-		* TX
-		* Rest (estados com menos de 50 usuários)
+* Estado(estado de origem dos Estados Unidos):
+	* CA
+	* IL
+	* MN
+	* NY
+	* TX
+	* Rest (estados com menos de 50 usuários)
 
-	* Popularidade:
-		* Blockbuster (vêem filmes mais populares)
-		* Diversificado (vêem filmes diversificados)
-		* Nichado (vêem filmes impopulares)
+* Popularidade:
+	* Blockbuster (vêem filmes mais populares)
+	* Diversificado (vêem filmes diversificados)
+	* Nichado (vêem filmes impopulares)
 
 
 ## Métricas utilizadas
 Para avaliar a eficiência go algoritmo de equidade, foram utilizadas três métricas sociais:
 
-	*Individual Unfairness ($R_ind$): variação das perdas individuais dos usuários ($l_i$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário   
+*Individual Unfairness ($R_ind$): variação das perdas individuais dos usuários ($l_i$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário   
