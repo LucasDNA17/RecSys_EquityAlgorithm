@@ -4,7 +4,6 @@ from Test import Test
 
 
 #Criação do dataframe
-#É necessário baixar ml-100k no link https://files.grouplens.org/datasets/movielens/ml-100k.zip
 df = pd.read_csv('./ml-100k/u.data', sep='\t', header=None)
 df.columns = ['userId', 'itemId', 'rating', 'timestamp']
 df.drop('timestamp', axis=1, inplace=True)

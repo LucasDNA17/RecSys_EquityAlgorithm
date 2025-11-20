@@ -80,6 +80,22 @@ Como exemplo, veja as medidas para o cenário de divisão por gênero:
 
 ## Utilização
 
+* Copie o repositório para sua máquina: 
+	```bash
+	git clone https://github.com/LucasDNA17/RecSys_EquityAlgorithm/tree/main
+	```
+* Mova o arquivo requirements.txt para o diretório tests:
+	```bash
+	mv /requirements/requirements.txt tests/
+	```
+
+* Acesse o diretório tests: cd tests
+* Crie um ambiente virtual: python -m venv virtual
+* Ative o ambiente virtual: source virtual/bin/activate
+* Instale as dependências: pip install -r requirements.txt
+* Execute os
+
+
 
 
 
