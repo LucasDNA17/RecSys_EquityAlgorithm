@@ -86,11 +86,11 @@ Como exemplo, veja as medidas para o cenário de divisão por gênero:
 	```
 * Mova o arquivo requirements.txt para o diretório tests:
 	```bash
-	mv /requirements/requirements.txt tests/
+	mv RecSys_EquityAlgorithm/requirements/requirements.txt RecSys_EquityAlgorithm/tests/
 	```
 * Acesse o diretório tests:
 	```bash
-	cd tests
+	cd RecSys_EquityAlgorithm/tests
 	```
 * Crie um ambiente virtual: 
 	```bash
