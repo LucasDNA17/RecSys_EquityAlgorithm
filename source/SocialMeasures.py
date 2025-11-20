@@ -19,6 +19,12 @@ class SocialMeasures:
     self.get_allGroupLosses()
     self.GroupUnfairness()
 
+  def print(self):
+    self.all()
+    print(f"Individual Unfairness: {self.individual_unfairness}")
+    print(f"Group Losses: {self.all_groupLosses}")
+    print(f"Group Unfairness: {self.group_unfairness}")
+
 
   def __mean_rate_difference__(self, userId):
     user_rating_map = self.all_users_ratings[userId]
@@ -38,7 +44,7 @@ class SocialMeasures:
 
       self.all_mean_rate_differences = all_mean_rate_differences
 
-    return all_mean_rate_differences
+    return self.all_mean_rate_differences
 
 
   def __IndividualLoss__(self, userId, predictions_vector):
@@ -121,3 +127,6 @@ class SocialMeasures:
       self.group_unfairness = group_unfairness
 
     return self.group_unfairness
+  
+
+  

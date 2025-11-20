@@ -1,6 +1,5 @@
 import pandas as pd
 import surprise as sp
-import numpy as np
 from Test import Test
 
 
@@ -11,10 +10,18 @@ df.columns = ['userId', 'itemId', 'rating', 'timestamp']
 df.drop('timestamp', axis=1, inplace=True)
 df.head()
 
+
 #Lendo as informações de gênero dos usuários
 users_information = pd.read_csv('./ml-100k/u.user', sep='|', header=None)
 users_information.columns = ['userId', 'age', 'gender', 'occupation', 'zipCode']
 users_information.drop(columns=['age', 'occupation', 'zipCode'], inplace=True)
+
+#Diminuição do tamanho do dataframe caso não se tenha a licensa Guropi
+#Os resultados obtidos em 'results' NÃO fizeram esta limitação
+size_limit = 40 #Limite de usuários para h = 5
+df = df.loc[df['userId'] <= size_limit, ['userId', 'itemId', 'rating']]
+users_information = users_information.loc[users_information['userId'] <= size_limit, ['userId', 'gender']]
+
 
 #Divisão dos grupos 
 group_male = list(((users_information.loc[users_information['gender'] == 'M', ['userId']])['userId'].unique()))
@@ -39,3 +46,13 @@ _, results['SVD'] = Test_SVD.run(range_h)
 
 Test_NMF = Test(df, NMF_algo, groups)
 _, results['NMF'] = Test_NMF.run(range_h)
+
+
+print(f"\nInitial Measures: ")
+initial_measures.print()
+
+print(f"\n")
+h = 5
+algo = 'NMF'
+print(f"{algo} measures with h = {h}: ")
+results[algo][h].print()

@@ -90,41 +90,48 @@ class EquityAlgorithm:
     return Z
 
 
+
+  #Dependendo do teste feito e do dataframe utilizado, o tamanho do problema
+  #de otimização pode ser muito grande para a versão gratuita do Gurobi, sendo
+  #necessária uma licensa. Para os testes feitos, foi utilizada uma licensa acadêmica
+  #gratuita.
   def optimization_algorithm(self, list_matrices, Z):
+    with gp.Env(empty=True) as env:
+      env.setParam('OutputFlag', 0)
+      env.start()
 
-    with gp.Model() as model:
+      with gp.Model(env=env) as model:
 
-      all_users = [i for i in range(Z.shape[0])]
-      all_matrices = [i for i in range(len(list_matrices))]
-      h = len(all_matrices)
-      n_users = Z.shape[0]
-      n_itens = (list_matrices[0]).shape[1]
+        all_users = [i for i in range(Z.shape[0])]
+        all_matrices = [i for i in range(len(list_matrices))]
+        h = len(all_matrices)
+        n_users = Z.shape[0]
+        n_itens = (list_matrices[0]).shape[1]
 
-      w = model.addVars(all_users, all_matrices, vtype=gp.GRB.BINARY, name='W')
+        w = model.addVars(all_users, all_matrices, vtype=gp.GRB.BINARY, name='W')
 
-      group_losses = [gp.quicksum(w[i - 1, j]*Z[i - 1][j] for i in group for j in range(h))/len(group) for group in self.groups]
+        group_losses = [gp.quicksum(w[i - 1, j]*Z[i - 1][j] for i in group for j in range(h))/len(group) for group in self.groups]
 
-      avg_loss = gp.quicksum(group_losses)/len(self.groups)
-      model.setObjective(gp.quicksum((loss - avg_loss)**2 for loss in group_losses), gp.GRB.MINIMIZE)
+        avg_loss = gp.quicksum(group_losses)/len(self.groups)
+        model.setObjective(gp.quicksum((loss - avg_loss)**2 for loss in group_losses), gp.GRB.MINIMIZE)
 
-      model.addConstrs((w.sum(user, '*') == 1 for user in all_users), "OneRecommendationPerUser")
-      model.optimize()
+        model.addConstrs((w.sum(user, '*') == 1 for user in all_users), "OneRecommendationPerUser")
+        model.optimize()
 
-      X_optimized = np.zeros((n_users, n_itens))
-      for user in all_users:
-        for matrice in range(h):
-          if w[user, matrice].X > 0.5:  # Se a recomendação foi escolhida para o usuário
-            X_optimized[user - 1] = list_matrices[matrice][user - 1]
+        X_optimized = np.zeros((n_users, n_itens))
+        for user in all_users:
+          for matrice in range(h):
+            if w[user, matrice].X > 0.5:  # Se a recomendação foi escolhida para o usuário
+              X_optimized[user - 1] = list_matrices[matrice][user - 1]
 
-      return X_optimized
+        return X_optimized
 
 
   def run(self):
     self.social_metrics_before.all()
     all_mean_rate_differences = self.social_metrics_before.all_mean_rate_differences
-    all_individualLosses = self.social_metrics_before.all_IndividualLosses
 
-    altered_matrices = [self.__generate_random_variations__(all_mean_rate_differences) for i in range(self.h)]
+    altered_matrices = [self.__generate_random_variations__(all_mean_rate_differences) for _ in range(self.h)]
     Z = self.__Z_matrix__(altered_matrices)
 
     X_optimized = self.optimization_algorithm(altered_matrices, Z)

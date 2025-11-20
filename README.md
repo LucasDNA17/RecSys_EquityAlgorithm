@@ -44,7 +44,7 @@ Grupos de usuários:
 
 
 ## Métricas utilizadas
-Para avaliar a eficiência go algoritmo de equidade, foram utilizadas três métricas sociais:
+Para avaliar a eficiência do algoritmo de equidade, foram utilizadas três métricas sociais:
 
 * **Individual Unfairness ($R_{ind}$):**  variação das perdas individuais dos _n_ usuários ($l_{i}$), onde cada perda individual é o erro quadrático médio entre as predições e os _ratings_ verdadeiros das interações conhecidas do usuário
 
@@ -73,8 +73,9 @@ Como exemplo, veja as medidas para o cenário de divisão por gênero:
 | Diretório | Conteúdo |
 | --- | --- |
 | source | Classes SocialMeasures e EquityAlgorithm. A primeira calcula as métricas descritas, enquanto que a segunda implementa o algoritmo de equidade abordado no artigo. |
-| tests | Classe Test, utilizada para realizar testes automaticamente. Arquivos ages.py, gender.py, popularity.py, states.py, que realizam os testes nos cenários escolhidos. |
+| tests | Classe Test, utilizada para realizar testes automaticamente. Arquivos ages.py, gender.py, popularity.py, states.py, que realizam os testes nos cenários escolhidos. Devido à necessidade da licença
+gurobi para os testes reais feitos, os testes nestes arquivos são versões "reduzidas" dos originais. |
 | results | Arquivos .tex com as tabelas que armazenam os resultados e os arquivos .pdf com estas tabelas compiladas.
-| assets | Imagens de exemplo utlizadas no arquivo Readme. |
+| assets | Imagens de exemplo utilizadas no arquivo Readme. |
 
 

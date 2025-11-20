@@ -1,5 +1,9 @@
-import pandas as pd
 import surprise as sp
+import numpy as np
+import os
+import sys
+source_folder_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'source'))
+sys.path.append(source_folder_path)
 from SocialMeasures import SocialMeasures
 from EquityAlgorithm import EquityAlgorithm
 
@@ -20,7 +24,7 @@ class Test:
   def __get_predictions_matrix__(self):
     if self.predictions_matrix is None:
       reader = sp.Reader(rating_scale=(self.min_rating, self.max_rating))
-      data_surprise = sp.Dataset.load_from_df(df, reader=reader)
+      data_surprise = sp.Dataset.load_from_df(self.df, reader=reader)
       trainset_surprise = data_surprise.build_full_trainset()
       self.rec_model.fit(trainset_surprise)
 

@@ -17,6 +17,14 @@ users_information = pd.read_csv('./ml-100k/u.user', sep='|', header=None)
 users_information.columns = ['userId', 'age', 'gender', 'occupation', 'zipCode']
 users_information.drop(columns=['age', 'gender', 'occupation'], inplace=True)
 
+
+#Diminuição do tamanho do dataframe caso não se tenha a licensa Guropi
+#Os resultados obtidos em 'results' NÃO fizeram esta limitação
+size_limit = 50 #Limite de usuários para h = 2
+df = df.loc[df['userId'] <= size_limit, ['userId', 'itemId', 'rating']]
+users_information = users_information.loc[users_information['userId'] <= size_limit, ['userId', 'zipCode']]
+
+
 engine = SearchEngine()
 #Função para obter o estado de um usuário a partir do zipcode
 def get_state(userId):
@@ -46,9 +54,10 @@ for userId in users_information['userId'].unique():
     little_group.append(userId)
 
 #Divisão dos usuários em grupos
-#Estados com menos de 50 usuários são agrupados em apenas um grupo
-#para reduzir o consumo de memória RAM
-delimiter = 50
+#Estados com menos de 5 usuários são agrupados em apenas um grupo
+#para reduzir o consumo de memória RAM (nos testes originais, estados com
+#menos de 50 usuários eram considerados)
+delimiter = 5
 for state in states.keys():
   if len(states[state]) < delimiter:
     little_group.extend(states[state])
@@ -59,13 +68,13 @@ groups.append(little_group)
 
 
 #Teste com três algoritmos de recomendação diferentes: KNN, SVD e NMF
-#Range de h: 1 - 4
+#Range de h: 1 - 2  --- nos testes reais feitos, o range 1 - 4 foi considerado
 KNNBasic_algo = sp.KNNBasic()
 SVD_algo = sp.SVD()
 NMF_algo = sp.NMF()
 results = {}
 
-range_h = list(range(1, 5))
+range_h = list(range(1, 3))
 
 Test_KNN = Test(df, KNNBasic_algo, groups)
 initial_measures, results['KNN'] = Test_KNN.run(range_h)
@@ -75,3 +84,13 @@ _, results['SVD'] = Test_SVD.run(range_h)
 
 Test_NMF = Test(df, NMF_algo, groups)
 _, results['NMF'] = Test_NMF.run(range_h)
+
+
+print(f"\nInitial Measures: ")
+initial_measures.print()
+
+print(f"\n")
+h = 2
+algo = 'NMF'
+print(f"{algo} measures with h = {h}: ")
+results[algo][h].print()

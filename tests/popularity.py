@@ -11,6 +11,10 @@ df.columns = ['userId', 'itemId', 'rating', 'timestamp']
 df.drop('timestamp', axis=1, inplace=True)
 df.head()
 
+#Diminuição do tamanho do dataframe caso não se tenha a licensa Guropi
+#Os resultados obtidos em 'results' NÃO fizeram esta limitação
+size_limit = 40 #Limite de usuários para h = 5
+df = df.loc[df['userId'] <= size_limit, ['userId', 'itemId', 'rating']]
 
 #Função para obter a popularidade (número de interações) de um item
 def get_item_popularity(itemId):
@@ -25,7 +29,7 @@ def get_user_mean_popularity(userId):
 
 
 #Ordena os usuários em ordem decrescente de popularidade
-users_sorted_popularity = list(users_information['userId'].unique())
+users_sorted_popularity = list(df['userId'].unique())
 users_sorted_popularity.sort(key=get_user_mean_popularity, reverse=True)
 
 #Divide os usuários em três grupos:
@@ -59,3 +63,12 @@ _, results['SVD'] = Test_SVD.run(range_h)
 
 Test_NMF = Test(df, NMF_algo, groups)
 _, results['NMF'] = Test_NMF.run(range_h)
+
+print(f"\nInitial Measures: ")
+initial_measures.print()
+
+print(f"\n")
+h = 5
+algo = 'KNN'
+print(f"{algo} measures with h = {h}: ")
+results[algo][h].print()
