@@ -82,7 +82,7 @@ Como exemplo, veja as medidas para o cenário de divisão por gênero:
 
 * Copie o repositório para sua máquina: 
 	```bash
-	git clone https://github.com/LucasDNA17/RecSys_EquityAlgorithm/tree/main
+	git clone https://github.com/LucasDNA17/RecSys_EquityAlgorithm
 	```
 * Mova o arquivo requirements.txt para o diretório tests:
 	```bash
