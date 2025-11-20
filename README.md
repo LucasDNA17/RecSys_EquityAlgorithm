@@ -88,12 +88,28 @@ Como exemplo, veja as medidas para o cenário de divisão por gênero:
 	```bash
 	mv /requirements/requirements.txt tests/
 	```
+* Acesse o diretório tests:
+	```bash
+	cd tests
+	```
+* Crie um ambiente virtual: 
+	```bash
+	python -m venv virtual
+	```
+* Ative o ambiente virtual: 
+	```bash
+	source virtual/bin/activate
+	```
+* Instale as dependências:
+	```bash
+	pip install -r requirements.txt
+	```
+* Execute o teste desejado:
+	```bash
+	python gender.py
+	```
 
-* Acesse o diretório tests: cd tests
-* Crie um ambiente virtual: python -m venv virtual
-* Ative o ambiente virtual: source virtual/bin/activate
-* Instale as dependências: pip install -r requirements.txt
-* Execute os
+
 
 
 
