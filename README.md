@@ -73,8 +73,7 @@ Como exemplo, veja as medidas para o cenário de divisão por gênero:
 | Diretório | Conteúdo |
 | --- | --- |
 | source | Classes SocialMeasures e EquityAlgorithm. A primeira calcula as métricas descritas, enquanto que a segunda implementa o algoritmo de equidade abordado no artigo. |
-| tests | Classe Test, utilizada para realizar testes automaticamente. Arquivos ages.py, gender.py, popularity.py, states.py, que realizam os testes nos cenários escolhidos. Devido à necessidade da licença
-gurobi para os testes reais feitos, os testes nestes arquivos são versões "reduzidas" dos originais. |
+| tests | Classe Test, utilizada para realizar testes automaticamente. Arquivos ages.py, gender.py, popularity.py, states.py, que realizam os testes nos cenários escolhidos. Devido à necessidade da licença gurobi para os testes reais feitos, os testes nestes arquivos são versões "reduzidas" dos originais. |
 | results | Arquivos .tex com as tabelas que armazenam os resultados e os arquivos .pdf com estas tabelas compiladas. |
 | assets | Imagens de exemplo utilizadas no arquivo Readme. |
 
