@@ -109,6 +109,25 @@ Como exemplo, veja as medidas para o cenário de divisão por gênero:
 	python gender.py
 	```
 
+Os códigos de exemplo em 'tests' ilustram como executar um teste. Supondo que você já tenha um dataframe 'df', um algoritmo de recomendação do módulo surprise 'algo' e uma divisão dos ids dos usuários 'groups', faça:
+	```python
+	Test_algo = Test(df, algo, groups)
+	```
+Em seguida, escolha um valor para h e faça:
+	```python
+	initial_measures, results = Test_algo.run(h)
+	```
+'initial_measures' e 'results' são instâncias da classe SocialMeasures. Seus valores das métricas podem ser vistos fazendo:
+	```python
+	initial_measures.print()
+	results.print()
+	```
+	
+
+
+
+
+
 
 
 
